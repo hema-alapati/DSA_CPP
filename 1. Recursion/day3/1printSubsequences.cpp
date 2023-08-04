@@ -17,7 +17,7 @@ void printF(int ind, vector<int> &ds, int arr[], int n)
         return;
     }
     // picking the particular index into the subsequence
-    ds.push_back(arr[i]);
+    ds.push_back(arr[ind]);
     printF(ind + 1, ds, arr, n);
     ds.pop_back();
     // not picking the particular index into the subsequence
