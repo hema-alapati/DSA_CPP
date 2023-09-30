@@ -20,4 +20,36 @@ The distances assigned to each node after the algorithm's completion represent t
 
 Time: O(V + E log V) time, where V is the number of vertices and E is the number of edges in the graph. 
 
-  Code:
+Code: (RTE on gfg)
+// problem link: https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1
+  public:
+	//Function to find the shortest distance of all the vertices
+    //from the source vertex S.
+    vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
+    {
+        // Code here
+        priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>>pq;
+        vector<int>dist(V);
+        for(int i=0;i<V;i++){
+            dist[i]=1e9;
+        }
+        
+        dist[S]=0; //distance from source node to itself is 0
+        pq.push({0,S}); //pushing the distance, node to priority queue
+        
+        while(!pq.empty()){
+            int dis=pq.top().first;
+            int node=pq.top().second;
+            
+            for(auto it: adj[node]){
+                int edgeWeight=it[1];
+                int adjNode=it[0];
+
+                if(dis+edgeWeight<dist[adjNode]){
+                    dist[adjNode]=dis+edgeWeight;
+                    pq.push({dist[adjNode],adjNode});
+                }
+            }
+        }
+        return dist;
+    }
