@@ -1,3 +1,7 @@
+66qs,120mins
+1 coding, rest all 5 mcqs on topics like data structures, algorithms, os, dbms, linux, networking, data visualization, pseudocodes, python mcqs, OOPS, etc.
+
+
 // Question:
 // The Card Game
 // One day. Fred and his N friends were playing a card game in which each player throws a card with a number written on it. The cards are such that a number X is written on front of the card, and the negative of that number is written on the back side of the card. This game has the following rules: -
